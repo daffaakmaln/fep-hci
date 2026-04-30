@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VisualSkill — Learn Data Science, Machine Learning, and AI from industry experts.">
+    <title>VisualSkill</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/course.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar" id="navbar">
+
+            <div class="logowrap">
+                <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
+                <h1 class="logo">VisualSkill</h1>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-register-mobile">
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </li>
+            </ul>
+
+            <div class="nav-register-desktop">
+                <a href="register.html" class="btn btn-register">Register</a>
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        </nav>
+    </header>
+
+    <article class="hero">
+        <div class="hero-bg">
+            <img src="assets/images/hero1.png" alt="Hero — Data Science" class="active">
+            <img src="assets/images/hero2.png" alt="Hero — Machine Learning">
+            <img src="assets/images/hero3.png" alt="Hero — Artificial Intelligence">
+        </div>
+
+        <div class="hero-content">
+            <h1>Dream, Create,<br>the Future.</h1>
+            <p>World-class courses in Data Science, Machine Learning, and AI — built for real careers.</p>
+            <div class="hero-actions">
+                <a href="course.html" class="btn">Explore Courses</a>
+                <a href="about.html" class="btn btn-outline">Our Story</a>
+            </div>
+        </div>
+
+        <div class="hero-dots">
+            <button class="hero-dot active" aria-label="Slide 1"></button>
+            <button class="hero-dot" aria-label="Slide 2"></button>
+            <button class="hero-dot" aria-label="Slide 3"></button>
+        </div>
+    </article>
+
+    <article class="trail-section">
+        <section class="trail-track">
+            <span class="trail-item">Data Science</span>
+            <span class="trail-item">Machine Learning</span>
+            <span class="trail-item">Deep Learning</span>
+            <span class="trail-item">Generative AI</span>
+            <span class="trail-item">Computer Vision</span>
+            <span class="trail-item">NLP</span>
+            <span class="trail-item">MLOps</span>
+            <span class="trail-item">Python</span>
+            <span class="trail-item">SQL & Analytics</span>
+            <span class="trail-item">Cloud Engineering</span>
+            <span class="trail-item">Data Science</span>
+            <span class="trail-item">Machine Learning</span>
+            <span class="trail-item">Deep Learning</span>
+            <span class="trail-item">Generative AI</span>
+            <span class="trail-item">Computer Vision</span>
+            <span class="trail-item">NLP</span>
+            <span class="trail-item">MLOps</span>
+            <span class="trail-item">Python</span>
+            <span class="trail-item">SQL & Analytics</span>
+            <span class="trail-item">Cloud Engineering</span>
+        </section>
+    </article>
+
+    <article class="courses reveal">
+        <section class="container">
+            <div class="courses-header">
+                <div>
+                    <p class="section-label">Top Courses</p>
+                    <h2>Start with the best.</h2>
+                </div>
+                <a href="course.html" class="btn btn-outline">All Courses →</a>
+            </div>
+
+            <div class="course-container">
+
+                <article class="course-card">
+                    <img src="assets/images/ai.jpg" alt="Artificial Intelligence course thumbnail">
+                    <div class="course-card-body">
+                        <p class="course-tag">Most Popular</p>
+                        <h3>Artificial Intelligence</h3>
+                        <p>From fundamentals to production-ready AI systems. Learn with real datasets and actual
+                            deployment workflows.</p>
+                        <div class="course-card-footer">
+                            <span class="course-price">$89</span>
+                            <span class="course-students">★ 4.9 · 3.2K students</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="assets/images/ds.jpg" alt="Data Science course thumbnail">
+                    <div class="course-card-body">
+                        <p class="course-tag">Trending</p>
+                        <h3>Data Science</h3>
+                        <p>Analyze, visualize, and extract meaning from complex data. Python, pandas, SQL — all in one
+                            track.</p>
+                        <div class="course-card-footer">
+                            <span class="course-price">$69</span>
+                            <span class="course-students">★ 4.9 · 5.1K students</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card">
+                    <img src="assets/images/web.jpg" alt="Web Development course thumbnail">
+                    <div class="course-card-body">
+                        <p class="course-tag">Beginner Friendly</p>
+                        <h3>Web Development</h3>
+                        <p>Build modern, responsive websites from scratch. HTML, CSS, JavaScript — and ship something
+                            real.</p>
+                        <div class="course-card-footer">
+                            <span class="course-price">$49</span>
+                            <span class="course-students">★ 4.8 · 7.4K students</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </article>
+
+    <section class="career reveal">
+        <div class="container">
+            <article class="career-inner">
+                <div class="career-text">
+                    <h2>Join Our Team.</h2>
+                    <p>We're looking for passionate people who believe learning changes lives. Shape the future of tech
+                        education with us.</p>
+                </div>
+                <div class="career-cta">
+                    <a href="career.html" class="btn btn-dark">View Open Roles</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2026 VisualSkill. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="course.html">Courses</a>
+            <a href="career.html">Careers</a>
+            <a href="register.html">Register</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

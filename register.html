@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — VisualSkill</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="logowrap">
+                <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
+                <h1 class="logo">VisualSkill</h1>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-register-mobile">
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </li>
+            </ul>
+
+            <div class="nav-register-desktop">
+                <a href="register.html" class="btn btn-register">Register</a>
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        </nav>
+    </header>
+
+    <section class="register-section reveal">
+        <article class="register-card">
+            <form id="form_register" novalidate>
+                <h1>Create account.</h1>
+                <p class="subtitle">Join VisualSkill and start learning today.</p>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="e.g. johndoe42" maxlength="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="genderMale" name="gender" value="male">
+                            <label for="genderMale">Male</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="genderFemale" name="gender" value="female">
+                            <label for="genderFemale">Female</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"
+                        placeholder="Min 8 chars, 1 uppercase, 1 number">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password"
+                        placeholder="Re-enter your password">
+                </div>
+
+                <!-- error -->
+                <div id="error" class="error-block"></div>
+                <div class="form-divider"></div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit">Create Account</button>
+
+                <p class="login-link">Already have an account? <a href="#">Sign in</a></p>
+            </form>
+
+            <div class="register-success" id="registerSuccess">
+                <div class="success-icon">✓</div>
+                <h2>Welcome to VisualSkill.</h2>
+                <p>Your account has been created. You're all set to start learning.</p>
+                <a href="course.html" class="btn btn-white" style="margin-top: 24px;">Browse Courses</a>
+            </div>
+
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 VisualSkill. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="course.html">Courses</a>
+            <a href="career.html">Careers</a>
+            <a href="register.html">Register</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

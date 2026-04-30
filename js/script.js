@@ -1,0 +1,223 @@
+function toggleMenu() {
+    var navLinks = document.getElementById('navLinks');
+    var btn = document.querySelector('.menu-button');
+    if (!navLinks) return;
+    navLinks.classList.toggle('active');
+    btn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    document.body.style.overflowY = navLinks.classList.contains('active') ? 'scroll' : '';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Course filter
+    document.querySelectorAll('.jobs-filter .filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.jobs-filter .filter-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            var filter = btn.dataset.filter;
+            document.querySelectorAll('#courseGrid .course-card').forEach(function (card) {
+                card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+            });
+        });
+    });
+});
+
+(function () {
+  var wrap = document.getElementById('sliderWrap');
+  var track = document.getElementById('sliderTrack');
+  if (!wrap || !track) return;
+  var max = 0;
+
+  function calc() {
+    max = track.scrollWidth - wrap.offsetWidth;
+    if (max < 0) max = 0;
+  }
+
+  function update() {
+    var rect = wrap.getBoundingClientRect();
+    var progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    progress = Math.max(0, Math.min(1, progress));
+    track.style.transform = 'translateX(' + (-progress * max) + 'px)';
+  }
+
+  calc(); update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', function () { calc(); update(); });
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    //navbar
+    var navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function () {
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        });
+    }
+
+    // slider
+    var slides = document.querySelectorAll('.hero-bg img');
+    var dots = document.querySelectorAll('.hero-dot');
+    var current = 0;
+
+    function goToSlide(n) {
+        slides[current].classList.remove('active');
+        if (dots[current]) dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        if (dots[current]) dots[current].classList.add('active');
+    }
+
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+        if (dots[0]) dots[0].classList.add('active');
+
+        var slideInterval = setInterval(function () {
+            goToSlide(current + 1);
+        }, 4500);
+
+        dots.forEach(function (dot, i) {
+            dot.addEventListener('click', function () {
+                clearInterval(slideInterval);
+                goToSlide(i);
+                slideInterval = setInterval(function () {
+                    goToSlide(current + 1);
+                }, 4500);
+            });
+        });
+    }
+
+    // fade in
+    var revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+        var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(function (el) { revealObs.observe(el); });
+    } else {
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+    }
+
+    // accordionfaq
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var item = btn.closest('.faq-item');
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+                openItem.classList.remove('open');
+            });
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+    //filter career
+    document.querySelectorAll('.filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.filter-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+
+            var filter = btn.dataset.filter;
+            document.querySelectorAll('.job-item').forEach(function (job) {
+                job.style.display = (filter === 'all' || job.dataset.dept === filter) ? '' : 'none';
+            });
+        });
+    });
+
+    //filter course
+    document.querySelectorAll('.course-filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.course-filter-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+
+            var filter = btn.dataset.filter;
+            document.querySelectorAll('.course-card').forEach(function (card) {
+                card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+            });
+        });
+    });
+
+    // register validation
+    var form = document.getElementById('form_register');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var fullname        = document.getElementById('fullname');
+            var username        = document.getElementById('username');
+            var email           = document.getElementById('email');
+            var dob             = document.getElementById('dob');
+            var gender          = document.getElementsByName('gender');
+            var password        = document.getElementById('password');
+            var confirmPassword = document.getElementById('confirm_password');
+            var terms           = document.getElementById('terms');
+            var error           = document.getElementById('error');
+            var msg = [];
+
+            if (!fullname.value) msg.push('Full name is required');
+
+            if (!username.value) {
+                msg.push('Username is required');
+            } else if (username.value.length < 4) {
+                msg.push('Username must be at least 4 characters');
+            } else if (username.value.includes(' ')) {
+                msg.push('Username must not contain spaces');
+            }
+
+            if (!email.value || !email.value.includes('@') || !email.value.includes('.'))
+                msg.push('Email is not valid');
+
+            var today = new Date();
+            var userDOB = new Date(dob.value);
+            if (!dob.value) {
+                msg.push('Date of birth is required');
+            } else if (userDOB.getFullYear() >= today.getFullYear()) {
+                msg.push('Year of birth must be less than current year');
+            }
+
+            var genderChecked = Array.from(gender).some(function (r) { return r.checked; });
+            if (!genderChecked) msg.push('Gender is required');
+
+            if (!password.value) {
+                msg.push('Password is required');
+            } else if (password.value.length < 8) {
+                msg.push('Password must be at least 8 characters');
+            } else {
+                if (!/[A-Z]/.test(password.value)) msg.push('Password must have at least 1 uppercase letter');
+                if (!/[0-9]/.test(password.value)) msg.push('Password must have at least 1 number');
+            }
+
+            if (!confirmPassword.value) {
+                msg.push('Please confirm your password');
+            } else if (confirmPassword.value !== password.value) {
+                msg.push('Passwords do not match');
+            }
+
+            if (!terms.checked) msg.push('You must agree to the Terms of Service');
+
+            if (msg.length > 0) {
+                error.innerText = msg.join('\n');
+                error.classList.add('show');
+            } else {
+                error.classList.remove('show');
+                form.style.display = 'none';
+                document.getElementById('registerSuccess').classList.add('show');
+            }
+        });
+    }
+
+});

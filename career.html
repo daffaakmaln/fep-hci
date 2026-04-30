@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VisualSkill Careers — Join our team and shape the future of tech education.">
+    <title>Careers — VisualSkill</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/career.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="page-enter">
+
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="logowrap">
+                <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
+                <h1 class="logo">VisualSkill</h1>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-register-mobile">
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </li>
+            </ul>
+
+            <div class="nav-register-desktop">
+                <a href="register.html" class="btn btn-register">Register</a>
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero reveal">
+            <div class="container">
+                <p class="section-label">We're Hiring</p>
+                <h1>Build what's<br><em>next with us.</em></h1>
+                <p>We're a small, ambitious team on a mission to make world-class tech education accessible. If that excites you, keep reading.</p>
+            </div>
+        </section>
+
+        <section class="jobs-section">
+            <div class="container">
+
+                <section style="display:flex; gap:48px; margin-bottom:56px; flex-wrap:wrap;">
+                    <article>
+                        <div style="font-family:var(--font-display);font-style:italic;font-size:40px;letter-spacing:-0.03em;">12</div>
+                        <div style="font-size:13px;color:var(--gray-mid);margin-top:4px;">Open positions</div>
+                    </article>
+                    <article>
+                        <div style="font-family:var(--font-display);font-style:italic;font-size:40px;letter-spacing:-0.03em;">4</div>
+                        <div style="font-size:13px;color:var(--gray-mid);margin-top:4px;">Departments</div>
+                    </article>
+                    <article>
+                        <div style="font-family:var(--font-display);font-style:italic;font-size:40px;letter-spacing:-0.03em;">100%</div>
+                        <div style="font-size:13px;color:var(--gray-mid);margin-top:4px;">Remote-friendly</div>
+                    </article>
+                </section>
+
+                <p class="section-label" style="margin-bottom:20px;">Filter by department</p>
+
+                <div class="jobs-filter">
+                    <button class="filter-btn active" data-filter="all">All Departments</button>
+                    <button class="filter-btn" data-filter="engineering">Engineering</button>
+                    <button class="filter-btn" data-filter="content">Content</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing</button>
+                </div>
+
+                <section class="jobs-list reveal">
+
+                    <article class="job-item" data-dept="engineering">
+                        <div class="job-left">
+                            <p class="job-dept">Engineering</p>
+                            <h3 class="job-title">Senior Backend Engineer</h3>
+                            <div class="job-meta">
+                                <span>Full-time</span>
+                                <span>Remote</span>
+                                <span>$120K – $160K</span>
+                            </div>
+                        </div>
+                        <div class="job-right">
+                            <span class="job-badge open">Open</span>
+                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <span class="job-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <article class="job-item" data-dept="engineering">
+                        <div class="job-left">
+                            <p class="job-dept">Engineering</p>
+                            <h3 class="job-title">ML Infrastructure Engineer</h3>
+                            <div class="job-meta">
+                                <span>Full-time</span>
+                                <span>Remote</span>
+                                <span>$130K – $175K</span>
+                            </div>
+                        </div>
+                        <div class="job-right">
+                            <span class="job-badge open">Open</span>
+                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <span class="job-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <article class="job-item" data-dept="content">
+                        <div class="job-left">
+                            <p class="job-dept">Content</p>
+                            <h3 class="job-title">AI & Data Science Instructor</h3>
+                            <div class="job-meta">
+                                <span>Contract</span>
+                                <span>Remote</span>
+                                <span>$80K – $110K</span>
+                            </div>
+                        </div>
+                        <div class="job-right">
+                            <span class="job-badge open">Open</span>
+                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <span class="job-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <article class="job-item" data-dept="content">
+                        <div class="job-left">
+                            <p class="job-dept">Content</p>
+                            <h3 class="job-title">Curriculum Designer</h3>
+                            <div class="job-meta">
+                                <span>Full-time</span>
+                                <span>Hybrid</span>
+                                <span>$70K – $95K</span>
+                            </div>
+                        </div>
+                        <div class="job-right">
+                            <span class="job-badge open">Open</span>
+                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <span class="job-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <article class="job-item" data-dept="design">
+                        <div class="job-left">
+                            <p class="job-dept">Design</p>
+                            <h3 class="job-title">Product Designer</h3>
+                            <div class="job-meta">
+                                <span>Full-time</span>
+                                <span>Remote</span>
+                                <span>$90K – $120K</span>
+                            </div>
+                        </div>
+                        <div class="job-right">
+                            <span class="job-badge open">Open</span>
+                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <span class="job-arrow">→</span>
+                        </div>
+                    </article>
+
+                    <article class="job-item" data-dept="marketing">
+                        <div class="job-left">
+                            <p class="job-dept">Marketing</p>
+                            <h3 class="job-title">Growth Marketing Lead</h3>
+                            <div class="job-meta">
+                                <span>Full-time</span>
+                                <span>Remote</span>
+                                <span>$85K – $115K</span>
+                            </div>
+                        </div>
+                        <div class="job-right">
+                            <span class="job-badge open">Open</span>
+                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <span class="job-arrow">→</span>
+                        </div>
+                    </article>
+
+                </section>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <p class="section-label">Before You Apply</p>
+                <h2>Frequently Asked<br><em>Questions.</em></h2>
+
+                <section class="faq-list reveal">
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            What does the application process look like?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Our process is straightforward: an initial application review, a 30-minute intro call with our People team, a take-home task relevant to your role, and a final panel interview with the team. We aim to complete the process within 3 weeks and give feedback at every stage.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            Are all roles fully remote?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Most of our roles are remote-first. Some positions are listed as Hybrid, which means occasional visits to our Jakarta or Singapore offices. Each job listing specifies the work arrangement clearly.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            Do I need a formal degree to apply?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            No. We evaluate candidates on skills, portfolio, and demonstrated ability — not degrees. We actively welcome people who are self-taught, bootcamp graduates, or career changers. What matters is what you can do.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            What benefits does VisualSkill offer?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            We offer competitive salaries, flexible working hours, an annual learning budget of $2,000 for your own growth, health coverage, equipment stipend, and free access to all VisualSkill courses. We also do twice-yearly team retreats.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            Can I apply to multiple positions?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, you can apply to more than one role if you genuinely believe you're a fit for each. We'd recommend tailoring your application for each position rather than sending the same one, so we can properly evaluate your interest.
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <button class="faq-question">
+                            How do I prepare before applying?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            Read the job description carefully and make sure your resume or portfolio reflects the specific skills mentioned. For technical roles, brush up on core fundamentals. For content roles, having sample work or a demo lesson helps. Feel free to reach out to us on LinkedIn if you have questions.
+                        </div>
+                    </article>
+
+                </section>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VisualSkill. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="course.html">Courses</a>
+            <a href="career.html">Careers</a>
+            <a href="register.html">Register</a>
+        </div>
+    </footer>
+
+</body>
+</html>

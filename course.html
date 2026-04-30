@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VisualSkill Courses — Data Science, ML, AI, and more. Learn from industry experts.">
+    <title>Courses — VisualSkill</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/career.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="page-enter">
+
+    <header>
+        <nav class="navbar" id="navbar">
+
+            <section class="logowrap">
+                <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
+                <h1 class="logo">VisualSkill</h1>
+            </section>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            
+            <div>
+                <a href="register.html" class="btn btn-register">Register</a>
+            </div>
+            <button class="menu-button" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero reveal">
+            <div class="container">
+                <p class="section-label">All Courses</p>
+                <h1>Every skill you<br><em>need to grow.</em></h1>
+                <p>48 expert-led courses across Data Science, AI, ML, Cloud, and more — built for real careers, not just
+                    certificates.</p>
+            </div>
+        </section>
+
+        <section style="padding: 0 0 110px;">
+            <section class="container">
+
+                <div class="jobs-filter"
+                    style="padding-top:48px; border-top:1px solid var(--border); margin-bottom:48px;">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="ai">AI</button>
+                    <button class="filter-btn" data-filter="data">Data</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn" data-filter="cloud">Cloud</button>
+                    <button class="filter-btn" data-filter="web">Web Dev</button>
+                </div>
+
+                <div class="course-page-grid reveal" id="courseGrid">
+
+                    <article class="course-card" data-cat="ai">
+                        <img src="assets/images/ai.jpg" alt="Artificial Intelligence">
+                        <div class="course-card-body">
+                            <p class="course-tag">Artificial Intelligence</p>
+                            <h3>AI Fundamentals</h3>
+                            <p>Understand AI concepts, algorithms, and real-world applications. Covers search, logic,
+                                agents, and neural networks.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$89</span>
+                                <span class="course-students">★ 4.9 · Intermediate</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="ml">
+                        <img src="assets/images/ml.jpg" alt="Machine Learning">
+                        <div class="course-card-body">
+                            <p class="course-tag">Machine Learning</p>
+                            <h3>ML Fundamentals</h3>
+                            <p>Build and evaluate ML models using scikit-learn. Covers supervised, unsupervised, and
+                                ensemble methods.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$99</span>
+                                <span class="course-students">★ 4.9 · Intermediate</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="data">
+                        <img src="assets/images/ds.jpg" alt="Data Science">
+                        <div class="course-card-body">
+                            <p class="course-tag">Data Science</p>
+                            <h3>Data Science Bootcamp</h3>
+                            <p>Python, pandas, SQL, and visualization. A complete foundation for anyone entering the
+                                data field.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$69</span>
+                                <span class="course-students">★ 4.9 · Beginner</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="ml">
+                        <img src="assets/images/dl.jpg" alt="Deep Learning">
+                        <div class="course-card-body">
+                            <p class="course-tag">Machine Learning</p>
+                            <h3>Deep Learning with PyTorch</h3>
+                            <p>Neural networks, CNNs, RNNs, and Transformers. Train and deploy state-of-the-art models.
+                            </p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$129</span>
+                                <span class="course-students">★ 4.8 · Advanced</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="data">
+                        <img src="assets/images/sql.jpg" alt="SQL Analytics">
+                        <div class="course-card-body">
+                            <p class="course-tag">SQL Journey</p>
+                            <h3>SQL for Data Analytics</h3>
+                            <p>Master SQL from basics to advanced window functions. Work with real business datasets and
+                                build dashboards.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$59</span>
+                                <span class="course-students">★ 4.8 · Beginner</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="ai">
+                        <img src="assets/images/genai.jpg" alt="Generative AI">
+                        <div class="course-card-body">
+                            <p class="course-tag">Artificial Intelligence</p>
+                            <h3>Generative AI & LLMs</h3>
+                            <p>Prompt engineering, fine-tuning, RAG pipelines, and building AI-powered products using
+                                modern LLMs.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$119</span>
+                                <span class="course-students">★ 4.9 · Advanced</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="cloud">
+                        <img src="assets/images/cloud.jpg" alt="Cloud Engineering">
+                        <div class="course-card-body">
+                            <p class="course-tag">Cloud</p>
+                            <h3>Cloud Engineering with AWS</h3>
+                            <p>Deploy scalable applications on AWS. Covers EC2, S3, Lambda, RDS, and cloud architecture
+                                best practices.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$109</span>
+                                <span class="course-students">★ 4.7 · Intermediate</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="data">
+                        <img src="assets/images/viz.jpg" alt="Data Visualization">
+                        <div class="course-card-body">
+                            <p class="course-tag">Data Science</p>
+                            <h3>Data Visualization</h3>
+                            <p>Transform raw data into compelling visual stories using Python, Tableau, and D3.js.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$79</span>
+                                <span class="course-students">★ 4.8 · Beginner</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="web">
+                        <img src="assets/images/web.jpg" alt="Web Development">
+                        <div class="course-card-body">
+                            <p class="course-tag">Web Dev</p>
+                            <h3>Web Development</h3>
+                            <p>Build modern, responsive websites from scratch. HTML, CSS, JavaScript and your first
+                                deployed project.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$49</span>
+                                <span class="course-students">★ 4.8 · Beginner</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="ml">
+                        <img src="assets/images/cv.jpg" alt="Computer Vision">
+                        <div class="course-card-body">
+                            <p class="course-tag">Machine Learning</p>
+                            <h3>Computer Vision</h3>
+                            <p>Image classification, object detection, and segmentation using OpenCV and PyTorch.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$119</span>
+                                <span class="course-students">★ 4.8 · Advanced</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="ai">
+                        <img src="assets/images/nlp.jpg" alt="NLP">
+                        <div class="course-card-body">
+                            <p class="course-tag">Artificial Intelligence</p>
+                            <h3>Natural Language Processing</h3>
+                            <p>Sentiment analysis, text classification, named entity recognition, and building NLP
+                                pipelines.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$99</span>
+                                <span class="course-students">★ 4.7 · Intermediate</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="course-card" data-cat="cloud">
+                        <img src="assets/images/mlops.jpg" alt="MLOps">
+                        <div class="course-card-body">
+                            <p class="course-tag">Cloud Computing</p>
+                            <h3>MLOps & Model Deployment</h3>
+                            <p>CI/CD for ML, model monitoring, Docker, Kubernetes, and deploying models to production at
+                                scale.</p>
+                            <div class="course-card-footer">
+                                <span class="course-price">$139</span>
+                                <span class="course-students">★ 4.9 · Advanced</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VisualSkill. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="course.html">Courses</a>
+            <a href="career.html">Careers</a>
+            <a href="register.html">Register</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.jobs-filter .filter-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelectorAll('.jobs-filter .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var filter = btn.dataset.filter;
+                    document.querySelectorAll('#courseGrid .course-card').forEach(function (card) {
+                        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
