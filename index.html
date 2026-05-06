@@ -14,11 +14,9 @@
 </head>
 
 <body>
-
     <header>
         <nav class="navbar" id="navbar">
-
-            <div class="logowrap">
+            <div class="logowrap" onclick="window.location.href='index.html'" style="cursor: pointer;">
                 <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
                 <h1 class="logo">VisualSkill</h1>
             </div>
@@ -41,7 +39,7 @@
         </nav>
     </header>
 
-    <article class="hero">
+    <section class="hero">
         <div class="hero-bg">
             <img src="assets/images/hero1.png" alt="Hero — Data Science" class="active">
             <img src="assets/images/hero2.png" alt="Hero — Machine Learning">
@@ -62,9 +60,9 @@
             <button class="hero-dot" aria-label="Slide 2"></button>
             <button class="hero-dot" aria-label="Slide 3"></button>
         </div>
-    </article>
+    </section>
 
-    <article class="trail-section">
+    <section class="trail-section">
         <section class="trail-track">
             <span class="trail-item">Data Science</span>
             <span class="trail-item">Machine Learning</span>
@@ -87,13 +85,12 @@
             <span class="trail-item">SQL & Analytics</span>
             <span class="trail-item">Cloud Engineering</span>
         </section>
-    </article>
+    </section>
 
     <article class="courses reveal">
         <section class="container">
             <div class="courses-header">
                 <div>
-                    <p class="section-label">Top Courses</p>
                     <h2>Start with the best.</h2>
                 </div>
                 <a href="course.html" class="btn btn-outline">All Courses →</a>
@@ -104,7 +101,6 @@
                 <article class="course-card">
                     <img src="assets/images/ai.jpg" alt="Artificial Intelligence course thumbnail">
                     <div class="course-card-body">
-                        <p class="course-tag">Most Popular</p>
                         <h3>Artificial Intelligence</h3>
                         <p>From fundamentals to production-ready AI systems. Learn with real datasets and actual
                             deployment workflows.</p>
@@ -118,7 +114,6 @@
                 <article class="course-card">
                     <img src="assets/images/ds.jpg" alt="Data Science course thumbnail">
                     <div class="course-card-body">
-                        <p class="course-tag">Trending</p>
                         <h3>Data Science</h3>
                         <p>Analyze, visualize, and extract meaning from complex data. Python, pandas, SQL — all in one
                             track.</p>
@@ -132,7 +127,6 @@
                 <article class="course-card">
                     <img src="assets/images/web.jpg" alt="Web Development course thumbnail">
                     <div class="course-card-body">
-                        <p class="course-tag">Beginner Friendly</p>
                         <h3>Web Development</h3>
                         <p>Build modern, responsive websites from scratch. HTML, CSS, JavaScript — and ship something
                             real.</p>

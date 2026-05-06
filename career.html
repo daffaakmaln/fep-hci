@@ -15,7 +15,7 @@
 
     <header>
         <nav class="navbar" id="navbar">
-            <div class="logowrap">
+            <div class="logowrap" onclick="window.location.href='index.html'" style="cursor: pointer;">
                 <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
                 <h1 class="logo">VisualSkill</h1>
             </div>
@@ -39,33 +39,67 @@
     </header>
 
     <main>
-        <section class="page-hero reveal">
-            <div class="container">
-                <p class="section-label">We're Hiring</p>
-                <h1>Build what's<br><em>next with us.</em></h1>
-                <p>We're a small, ambitious team on a mission to make world-class tech education accessible. If that excites you, keep reading.</p>
+        <section class="page-hero reveal" style="padding-right: 50px;">
+            <div class="herodivider">
+                <div class="container">
+                    <h1>Build what's<br><em>next with us.</em></h1>
+                    <p>We're a small, ambitious team on a mission to make world-class tech education accessible. If that
+                        excites you, keep reading.</p>
+                </div>
+
+                <div class="carousel">
+                    <div class="carousel_inner">
+                        <div class="carousel_item carousel_item__active">
+                            <img src="assets/images/hero1.png" alt="" class="carousel_img">
+                        </div>
+                        <div class="carousel_item">
+                            <img src="assets/images/hero2.png" alt="" class="carousel_img">
+                        </div>
+                        <div class="carousel_item">
+                            <img src="assets/images/hero1.png" alt="" class="carousel_img">
+                        </div>
+                    </div>
+
+                    <div class="carousel_indicator">
+                        <button class="carousel_dot carousel_dot__active"></button>
+                        <button class="carousel_dot"></button>
+                        <button class="carousel_dot"></button>
+                    </div>
+
+                    <div class="carousel_control">
+                        <button class="carousel_button carousel_button__prev">
+                            <img src="assets/icons/leftcev.png" style="width: 30px; height: 30px;"></img>
+                        </button>
+                        <button class="carousel_button carousel_button__next">
+                            <img src="assets/icons/cev.png" style="width: 30px; height: 30px;"></img>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="jobs-section">
             <div class="container">
+                <h1 class="sectionkerja">We Are Hiring</h1>
+                
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <section class="statssection">
+                    <article class="statitem">
+                        <h1 class="statnumber">12</h1>
+                        <div class="statlabel">Open positions</div>
+                    </article>
 
-                <section style="display:flex; gap:48px; margin-bottom:56px; flex-wrap:wrap;">
-                    <article>
-                        <div style="font-family:var(--font-display);font-style:italic;font-size:40px;letter-spacing:-0.03em;">12</div>
-                        <div style="font-size:13px;color:var(--gray-mid);margin-top:4px;">Open positions</div>
+                    <article class="statitem">
+                        <h1 class="statnumber">4</h1>
+                        <div class="statlabel">Departments</div>
                     </article>
-                    <article>
-                        <div style="font-family:var(--font-display);font-style:italic;font-size:40px;letter-spacing:-0.03em;">4</div>
-                        <div style="font-size:13px;color:var(--gray-mid);margin-top:4px;">Departments</div>
-                    </article>
-                    <article>
-                        <div style="font-family:var(--font-display);font-style:italic;font-size:40px;letter-spacing:-0.03em;">100%</div>
-                        <div style="font-size:13px;color:var(--gray-mid);margin-top:4px;">Remote-friendly</div>
+
+                    <article class="statitem">
+                        <h1 class="statnumber">100%</h1>
+                        <div class="statlabel">Remote-friendly</div>
                     </article>
                 </section>
-
-                <p class="section-label" style="margin-bottom:20px;">Filter by department</p>
+                </div>
 
                 <div class="jobs-filter">
                     <button class="filter-btn active" data-filter="all">All Departments</button>
@@ -76,10 +110,9 @@
                 </div>
 
                 <section class="jobs-list reveal">
-
                     <article class="job-item" data-dept="engineering">
                         <div class="job-left">
-                            <p class="job-dept">Engineering</p>
+                            <!-- <p class="job-dept">Engineering</p> -->
                             <h3 class="job-title">Senior Backend Engineer</h3>
                             <div class="job-meta">
                                 <span>Full-time</span>
@@ -89,14 +122,15 @@
                         </div>
                         <div class="job-right">
                             <span class="job-badge open">Open</span>
-                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="padding:9px 18px;font-size:13px;">Apply</a>
                             <span class="job-arrow">→</span>
                         </div>
                     </article>
 
                     <article class="job-item" data-dept="engineering">
                         <div class="job-left">
-                            <p class="job-dept">Engineering</p>
+                            <!-- <p class="job-dept">Engineering</p> -->
                             <h3 class="job-title">ML Infrastructure Engineer</h3>
                             <div class="job-meta">
                                 <span>Full-time</span>
@@ -106,14 +140,15 @@
                         </div>
                         <div class="job-right">
                             <span class="job-badge open">Open</span>
-                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="padding:9px 18px;font-size:13px;">Apply</a>
                             <span class="job-arrow">→</span>
                         </div>
                     </article>
 
                     <article class="job-item" data-dept="content">
                         <div class="job-left">
-                            <p class="job-dept">Content</p>
+                            <!-- <p class="job-dept">Content</p> -->
                             <h3 class="job-title">AI & Data Science Instructor</h3>
                             <div class="job-meta">
                                 <span>Contract</span>
@@ -123,14 +158,15 @@
                         </div>
                         <div class="job-right">
                             <span class="job-badge open">Open</span>
-                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="padding:9px 18px;font-size:13px;">Apply</a>
                             <span class="job-arrow">→</span>
                         </div>
                     </article>
 
                     <article class="job-item" data-dept="content">
                         <div class="job-left">
-                            <p class="job-dept">Content</p>
+                            <!-- <p class="job-dept">Content</p> -->
                             <h3 class="job-title">Curriculum Designer</h3>
                             <div class="job-meta">
                                 <span>Full-time</span>
@@ -140,14 +176,15 @@
                         </div>
                         <div class="job-right">
                             <span class="job-badge open">Open</span>
-                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="padding:9px 18px;font-size:13px;">Apply</a>
                             <span class="job-arrow">→</span>
                         </div>
                     </article>
 
                     <article class="job-item" data-dept="design">
                         <div class="job-left">
-                            <p class="job-dept">Design</p>
+                            <!-- <p class="job-dept">Design</p> -->
                             <h3 class="job-title">Product Designer</h3>
                             <div class="job-meta">
                                 <span>Full-time</span>
@@ -157,14 +194,15 @@
                         </div>
                         <div class="job-right">
                             <span class="job-badge open">Open</span>
-                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="padding:9px 18px;font-size:13px;">Apply</a>
                             <span class="job-arrow">→</span>
                         </div>
                     </article>
 
                     <article class="job-item" data-dept="marketing">
                         <div class="job-left">
-                            <p class="job-dept">Marketing</p>
+                            <!-- <p class="job-dept">Marketing</p> -->
                             <h3 class="job-title">Growth Marketing Lead</h3>
                             <div class="job-meta">
                                 <span>Full-time</span>
@@ -174,7 +212,8 @@
                         </div>
                         <div class="job-right">
                             <span class="job-badge open">Open</span>
-                            <a href="register.html" class="btn btn-outline" style="padding:9px 18px;font-size:13px;">Apply</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="padding:9px 18px;font-size:13px;">Apply</a>
                             <span class="job-arrow">→</span>
                         </div>
                     </article>
@@ -183,7 +222,60 @@
             </div>
         </section>
 
-        <section class="faq-section">
+        <section class="container-mainfaq reveal" style="margin-top: 100px; margin-bottom: 100px;">
+            <div class="container">
+                <h1 style="color: black; padding-bottom: 20px; margin: 0;">Frequently Asked Questions</h1>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq">
+                <div class="questions">
+                    <p>What does the application process look like?</p>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icon-plus.svg" alt="Open" class="inactive-icon" />
+                        <img src="./assets/images/icon-minus.svg" alt="Close" class="active-icon" />
+                    </div>
+                </div>
+                <div class="content-text">
+                    <p>Our process is straightforward: an initial application review, a 30-minute intro call with our People team, a take-home task relevant to your role, and a final panel interview with the team. We aim to complete the process within 3 weeks and give feedback at every stage.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="questions">
+                    <p>Are all roles fully remote?</p>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icon-plus.svg" alt="Open" class="inactive-icon" />
+                        <img src="./assets/images/icon-minus.svg" alt="Close" class="active-icon" />
+                    </div>
+                </div>
+                <div class="content-text">
+                    <p>
+                       Most of our roles are remote-first. Some positions are listed as Hybrid, which means
+                            occasional visits to our Jakarta or Singapore offices. Each job listing specifies the work
+                            arrangement clearly.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="questions">
+                    <p>Do I need a formal degree to apply?</p>
+                    <div class="icon-wrapper">
+                        <img src="./assets/images/icon-plus.svg" alt="Open" class="inactive-icon" />
+                        <img src="./assets/images/icon-minus.svg" alt="Close" class="active-icon" />
+                    </div>
+                </div>
+                <div class="content-text">
+                    <p>
+                        No. We evaluate candidates on skills, portfolio, and demonstrated ability — not degrees. We actively welcome people who are self-taught, graduates, or career changers. What matters is what you can do.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="faq-section">
             <div class="container">
                 <p class="section-label">Before You Apply</p>
                 <h2>Frequently Asked<br><em>Questions.</em></h2>
@@ -196,7 +288,9 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            Our process is straightforward: an initial application review, a 30-minute intro call with our People team, a take-home task relevant to your role, and a final panel interview with the team. We aim to complete the process within 3 weeks and give feedback at every stage.
+                            Our process is straightforward: an initial application review, a 30-minute intro call with
+                            our People team, a take-home task relevant to your role, and a final panel interview with
+                            the team. We aim to complete the process within 3 weeks and give feedback at every stage.
                         </div>
                     </article>
 
@@ -206,7 +300,9 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            Most of our roles are remote-first. Some positions are listed as Hybrid, which means occasional visits to our Jakarta or Singapore offices. Each job listing specifies the work arrangement clearly.
+                            Most of our roles are remote-first. Some positions are listed as Hybrid, which means
+                            occasional visits to our Jakarta or Singapore offices. Each job listing specifies the work
+                            arrangement clearly.
                         </div>
                     </article>
 
@@ -216,7 +312,9 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            No. We evaluate candidates on skills, portfolio, and demonstrated ability — not degrees. We actively welcome people who are self-taught, bootcamp graduates, or career changers. What matters is what you can do.
+                            No. We evaluate candidates on skills, portfolio, and demonstrated ability — not degrees. We
+                            actively welcome people who are self-taught, bootcamp graduates, or career changers. What
+                            matters is what you can do.
                         </div>
                     </article>
 
@@ -226,7 +324,9 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            We offer competitive salaries, flexible working hours, an annual learning budget of $2,000 for your own growth, health coverage, equipment stipend, and free access to all VisualSkill courses. We also do twice-yearly team retreats.
+                            We offer competitive salaries, flexible working hours, an annual learning budget of $2,000
+                            for your own growth, health coverage, equipment stipend, and free access to all VisualSkill
+                            courses. We also do twice-yearly team retreats.
                         </div>
                     </article>
 
@@ -236,7 +336,9 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            Yes, you can apply to more than one role if you genuinely believe you're a fit for each. We'd recommend tailoring your application for each position rather than sending the same one, so we can properly evaluate your interest.
+                            Yes, you can apply to more than one role if you genuinely believe you're a fit for each.
+                            We'd recommend tailoring your application for each position rather than sending the same
+                            one, so we can properly evaluate your interest.
                         </div>
                     </article>
 
@@ -246,13 +348,16 @@
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            Read the job description carefully and make sure your resume or portfolio reflects the specific skills mentioned. For technical roles, brush up on core fundamentals. For content roles, having sample work or a demo lesson helps. Feel free to reach out to us on LinkedIn if you have questions.
+                            Read the job description carefully and make sure your resume or portfolio reflects the
+                            specific skills mentioned. For technical roles, brush up on core fundamentals. For content
+                            roles, having sample work or a demo lesson helps. Feel free to reach out to us on LinkedIn
+                            if you have questions.
                         </div>
                     </article>
 
                 </section>
             </div>
-        </section>
+        </section> -->
 
     </main>
 
@@ -267,4 +372,5 @@
     </footer>
 
 </body>
+
 </html>

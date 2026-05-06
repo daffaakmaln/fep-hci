@@ -15,8 +15,7 @@
 <body class="page-enter">
     <header>
         <nav class="navbar" id="navbar">
-
-            <div class="logowrap">
+            <div class="logowrap" onclick="window.location.href='index.html'" style="cursor: pointer;">
                 <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
                 <h1 class="logo">VisualSkill</h1>
             </div>
@@ -40,23 +39,41 @@
     </header>
 
     <main>
-        <section class="page-hero reveal" style="border-bottom: none; padding-bottom: 0;">
-            <div class="container">
-                <p class="section-label">Our Story</p>
-                <h1>We believe learning<br><em>changes everything.</em></h1>
+        <section class="hero">
+            <div class="hero-bg">
+                <img src="assets/images/hero1.png" alt="Hero — Data Science" class="active">
+                <img src="assets/images/hero2.png" alt="Hero — Machine Learning">
+                <img src="assets/images/hero3.png" alt="Hero — Artificial Intelligence">
+            </div>
+
+
+            <section class="page-hero reveal" style="border-bottom: none; padding-bottom: 0;">
+                <div class="container">
+                    <p class="section-label">Our Story</p>
+                    <h1>We believe learning<br><em>changes everything.</em></h1>
+                </div>
+            </section>
+
+
+            <div class="hero-dots">
+                <button class="hero-dot active" aria-label="Slide 1"></button>
+                <button class="hero-dot" aria-label="Slide 2"></button>
+                <button class="hero-dot" aria-label="Slide 3"></button>
             </div>
         </section>
 
         <section class="sliderbaru reveal" style="padding-left: 100px; ">
+            <div class="container">
                 <h1>Where it all<br><em>began.</em></h1>
-                <p>VisualSkill was founded in 2021 by a group of engineers and educators who were tired of the
-                    same problem: great talent, held back by inaccessible <br>education. Too expensive. Too
-                    theoretical. Too slow for the pace of the industry. We started with a single Data Science course, 
-                    a small community<br> forum, and a belief that if
-                    we made learning genuinely engaging and practical, people would show up. They did — 12,000
-                    learners later, we haven't<br> stopped.
-                Today VisualSkill is home to 48 expert-led courses across AI, Data Science,
-                    Cloud, and more — and we're just getting started.</p>
+                <p>VisualSkill was founded in 2021 by a group of engineers and educators who were tired of thesame
+                    problem: great talent, held back by inaccessible zeducation. Too expensive. Too theoretical. Too
+                    slow for the pace of the industry. We started with a single Data Science course, a small community
+                    forum, and a belief that if we made learning genuinely engaging and practical, people would show up.
+                    They did — 12,000 learners later, we haven't stopped. Today VisualSkill is home to 48 expert-led
+                    courses across AI, Data Science, Cloud, and more — and we're just getting started.</p>
+
+            </div>
+
             <div class="img-slider-wrap reveal" id="sliderWrap">
                 <div class="img-slider-track" id="sliderTrack">
                     <img src="assets/images/ai.jpg" alt="">

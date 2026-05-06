@@ -24,26 +24,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 (function () {
-  var wrap = document.getElementById('sliderWrap');
-  var track = document.getElementById('sliderTrack');
-  if (!wrap || !track) return;
-  var max = 0;
+    var wrap = document.getElementById('sliderWrap');
+    var track = document.getElementById('sliderTrack');
+    if (!wrap || !track) return;
+    var max = 0;
 
-  function calc() {
-    max = track.scrollWidth - wrap.offsetWidth;
-    if (max < 0) max = 0;
-  }
+    function calc() {
+        max = track.scrollWidth - wrap.offsetWidth;
+        if (max < 0) max = 0;
+    }
 
-  function update() {
-    var rect = wrap.getBoundingClientRect();
-    var progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-    progress = Math.max(0, Math.min(1, progress));
-    track.style.transform = 'translateX(' + (-progress * max) + 'px)';
-  }
+    function update() {
+        var rect = wrap.getBoundingClientRect();
+        var progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        progress = Math.max(0, Math.min(1, progress));
+        track.style.transform = 'translateX(' + (-progress * max) + 'px)';
+    }
 
-  calc(); update();
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', function () { calc(); update(); });
+    calc(); update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', function () { calc(); update(); });
 })();
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -109,17 +109,115 @@ document.addEventListener('DOMContentLoaded', function () {
         revealEls.forEach(function (el) { el.classList.add('visible'); });
     }
 
-    // accordionfaq
-    document.querySelectorAll('.faq-question').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var item = btn.closest('.faq-item');
-            var isOpen = item.classList.contains('open');
-            document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
-                openItem.classList.remove('open');
-            });
-            if (!isOpen) item.classList.add('open');
+    const faqs = document.querySelectorAll(".faq");
+    faqs.forEach((faq) => {
+        faq.addEventListener("click", () => {
+            faq.classList.toggle("active");
         });
     });
+
+    // accordionfaq
+    // document.querySelectorAll('.faq-question').forEach(function (btn) {
+    //     btn.addEventListener('click', function () {
+    //         var item = btn.closest('.faq-item');
+    //         var isOpen = item.classList.contains('open');
+    //         document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+    //             openItem.classList.remove('open');
+    //         });
+    //         if (!isOpen) item.classList.add('open');
+    //     });
+    // });
+
+    //slider
+let onSlide = false;
+
+window.addEventListener("load", () => {
+   autoSlide();
+
+   const dots = document.querySelectorAll(".carousel_dot");
+   for (let i = 0; i < dots.length; i++) {
+      dots[i].addEventListener("click", () => slide(i));
+   }
+
+   const buttonPrev = document.querySelector(".carousel_button__prev");
+   const buttonNext = document.querySelector(".carousel_button__next");
+   buttonPrev.addEventListener("click", () => slide(getItemActiveIndex() - 1));
+   buttonNext.addEventListener("click", () => slide(getItemActiveIndex() + 1));
+})
+
+function autoSlide() {
+   setInterval(() => {
+      slide(getItemActiveIndex() + 1);
+   }, 3000); // slide speed = 3s
+}
+
+function slide(toIndex) {
+   if (onSlide)
+      return;
+   onSlide = true;
+
+   const itemsArray = Array.from(document.querySelectorAll(".carousel_item"));
+   const itemActive = document.querySelector(".carousel_item__active");
+   const itemActiveIndex = itemsArray.indexOf(itemActive);
+   let newItemActive = null;
+
+   if (toIndex > itemActiveIndex) {
+      // check if toIndex exceeds the number of carousel items
+      if (toIndex >= itemsArray.length) {
+         toIndex = 0;
+      }
+
+      newItemActive = itemsArray[toIndex];
+
+      // start transition
+      newItemActive.classList.add("carousel_item__pos_next");
+      setTimeout(() => {
+         newItemActive.classList.add("carousel_item__next");
+         itemActive.classList.add("carousel_item__next");
+      }, 20);
+   } else {
+      // check if toIndex exceeds the number of carousel items
+      if (toIndex < 0) {
+         toIndex = itemsArray.length - 1;
+      }
+
+      newItemActive = itemsArray[toIndex];
+
+      // start transition
+      newItemActive.classList.add("carousel_item__pos_prev");
+      setTimeout(() => {
+         newItemActive.classList.add("carousel_item__prev");
+         itemActive.classList.add("carousel_item__prev");
+      }, 20);
+   }
+
+   // remove all transition class and switch active class
+   newItemActive.addEventListener("transitionend", () => {
+      itemActive.className = "carousel_item";
+      newItemActive.className = "carousel_item carousel_item__active";
+      onSlide = false;
+   }, {
+      once: true
+   });
+
+   slideIndicator(toIndex);
+}
+
+function getItemActiveIndex() {
+   const itemsArray = Array.from(document.querySelectorAll(".carousel_item"));
+   const itemActive = document.querySelector(".carousel_item__active");
+   const itemActiveIndex = itemsArray.indexOf(itemActive);
+   return itemActiveIndex;
+}
+
+function slideIndicator(toIndex) {
+   const dots = document.querySelectorAll(".carousel_dot");
+   const dotActive = document.querySelector(".carousel_dot__active");
+   const newDotActive = dots[toIndex];
+
+   dotActive.classList.remove("carousel_dot__active");
+   newDotActive.classList.add("carousel_dot__active");
+}
 
     //filter career
     document.querySelectorAll('.filter-btn').forEach(function (btn) {
@@ -157,15 +255,15 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            var fullname        = document.getElementById('fullname');
-            var username        = document.getElementById('username');
-            var email           = document.getElementById('email');
-            var dob             = document.getElementById('dob');
-            var gender          = document.getElementsByName('gender');
-            var password        = document.getElementById('password');
+            var fullname = document.getElementById('fullname');
+            var username = document.getElementById('username');
+            var email = document.getElementById('email');
+            var dob = document.getElementById('dob');
+            var gender = document.getElementsByName('gender');
+            var password = document.getElementById('password');
             var confirmPassword = document.getElementById('confirm_password');
-            var terms           = document.getElementById('terms');
-            var error           = document.getElementById('error');
+            var terms = document.getElementById('terms');
+            var error = document.getElementById('error');
             var msg = [];
 
             if (!fullname.value) msg.push('Full name is required');
