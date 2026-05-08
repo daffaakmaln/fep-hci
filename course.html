@@ -17,22 +17,25 @@
 
     <header>
         <nav class="navbar" id="navbar">
-
-            <section class="logowrap" onclick="window.location.href='index.html'" style="cursor: pointer;">
+            <div class="logowrap" onclick="window.location.href='index.html'" style="cursor: pointer;">
                 <img src="assets/icons/logo.png" alt="VisualSkill Logo" class="logo">
                 <h1 class="logo">VisualSkill</h1>
-            </section>
+            </div>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="course.html">Course</a></li>
                 <li><a href="career.html">Career</a></li>
                 <li><a href="about.html">About</a></li>
+                <li class="nav-register-mobile">
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </li>
             </ul>
-            
-            <div>
+
+            <div class="nav-register-desktop">
                 <a href="register.html" class="btn btn-register">Register</a>
             </div>
+
             <button class="menu-button" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
         </nav>
     </header>
@@ -232,6 +235,106 @@
             </section>
         </section>
 
+        <section class="rating-section">
+            <div class="rating-wrapper">
+
+                <div class="rating-kiri">
+                    <h1 class="rating-judul">
+                        What our customer say?
+                    </h1>
+
+                    <p class="rating-subjudul">
+                        See why thousands of learners trust us to grow their potential.
+                        Feedback from those who've experienced learning without limits.
+                    </p>
+
+                    <section class="testimonial-section">
+                        <div class="testimonial-container">
+
+                            <div class="testimonial-content">
+                                <h2 class="testimonial-text">
+                                    “This course helped me improve my coding skills with real-world projects and clear
+                                    explanations.The mentors were supportive, and the lessons were easy to follow from
+                                    start to finish.”
+                                </h2>
+
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=12" alt="Profile" class="author-image">
+
+                                    <div class="author-detail">
+                                        <div class="author-top">
+                                            <span class="author-name">
+                                                Nyasha-Harmony Gutsa
+                                            </span>
+
+                                            <span class="separator">•</span>
+
+                                            <span class="author-brand">
+                                                billy
+                                            </span>
+                                        </div>
+
+                                        <p class="author-role">
+                                            CEO at Billy Insurance
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-preview">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                                    alt="Dashboard Preview">
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="testimonial-section">
+                        <div class="testimonial-container">
+
+                            <div class="testimonial-content">
+                                <h2 class="testimonial-text">
+                                    “I finally understand concepts that used to confuse me after watching random
+                                    tutorials for weeks.
+                                    The material is practical, updated, and very useful for building a strong IT
+                                    portfolio.”
+                                </h2>
+
+                                <div class="testimonial-author">
+                                    <img src="https://i.pravatar.cc/100?img=12" alt="Profile" class="author-image">
+
+                                    <div class="author-detail">
+                                        <div class="author-top">
+                                            <span class="author-name">
+                                                Nyasha-Harmony Gutsa
+                                            </span>
+
+                                            <span class="separator">•</span>
+
+                                            <span class="author-brand">
+                                                billy
+                                            </span>
+                                        </div>
+
+                                        <p class="author-role">
+                                            CEO at Billy Insurance
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-preview">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                                    alt="Dashboard Preview">
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -243,21 +346,6 @@
             <a href="register.html">Register</a>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.jobs-filter .filter-btn').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    document.querySelectorAll('.jobs-filter .filter-btn').forEach(function (b) { b.classList.remove('active'); });
-                    btn.classList.add('active');
-                    var filter = btn.dataset.filter;
-                    document.querySelectorAll('#courseGrid .course-card').forEach(function (card) {
-                        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
-                    });
-                });
-            });
-        });
-    </script>
 
 </body>
 

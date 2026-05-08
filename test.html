@@ -1,0 +1,391 @@
+<!-- =============================================
+     SECTION RATING / TESTIMONIAL
+     Copy paste bagian ini ke website kamu
+     ============================================= -->
+
+<section class="rating-section">
+  <div class="rating-wrapper">
+
+    <div class="rating-kiri">
+      <h2 class="rating-judul">
+        What our <span class="rating-aksen">customer</span> say?
+      </h2>
+      <p class="rating-subjudul">
+        See why thousands of learners trust us to grow their potential.
+        Feedback from those who've experienced learning without limits.
+      </p>
+
+      <div class="rating-kartu-grid" id="rating-kartu-grid">
+      </div>
+
+      <div class="rating-nav">
+        <button class="rating-nav-btn" id="rating-prev" aria-label="Sebelumnya">&#8249;</button>
+        <button class="rating-nav-btn" id="rating-next" aria-label="Berikutnya">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="rating-kanan">
+      <div class="rating-gambar-depan">
+        <div class="rating-badge-floating">4.9 ★ &nbsp;·&nbsp; 1.2k reviews</div>
+      </div>
+      <div class="rating-gambar-belakang"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     CSS — taruh di <style> atau file .css kamu
+     ============================================= -->
+<style>
+.rating-section {
+  background: #0d1117;
+  padding: 80px 40px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.rating-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* ---- KIRI ---- */
+.rating-kiri {
+  flex: 1;
+  min-width: 280px;
+}
+
+.rating-judul {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1.3;
+}
+
+.rating-aksen {
+  color: #2ee8b5;
+}
+
+.rating-subjudul {
+  color: #8b9cb3;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 36px;
+  max-width: 420px;
+}
+
+/* Grid dua kartu berdampingan */
+.rating-kartu-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Satu kartu testimonial */
+.rating-kartu {
+  background: #131c2b;
+  border: 1px solid #1e2d40;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 180px;
+  transition: border-color 0.3s;
+}
+
+.rating-kartu:hover {
+  border-color: #2ee8b550;
+}
+
+/* Baris avatar + nama */
+.rating-kartu-atas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* Lingkaran inisial (fallback kalau tidak ada foto) */
+.rating-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2ee8b5, #0f6e56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #0d1117;
+  font-size: 14px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Kalau pakai foto, taruh <img> di dalam .rating-avatar */
+.rating-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.rating-nama {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.rating-bintang {
+  color: #f5a623;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.rating-teks {
+  color: #8b9cb3;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.rating-kutip {
+  color: #2ee8b5;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: right;
+}
+
+/* ---- NAVIGASI ---- */
+.rating-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.rating-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid #1e2d40;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, color 0.3s;
+  line-height: 1;
+}
+
+.rating-nav-btn:hover {
+  border-color: #2ee8b5;
+  color: #2ee8b5;
+}
+
+/* ---- KANAN (dekorasi) ---- */
+.rating-kanan {
+  position: relative;
+  flex-shrink: 0;
+  width: 220px;
+  height: 300px;
+}
+
+.rating-gambar-depan {
+  position: relative;
+  z-index: 2;
+  width: 220px;
+  height: 300px;
+  border-radius: 16px;
+  border: 1px solid #2ee8b540;
+  background: linear-gradient(160deg, #1a2e40 40%, #0d3d30);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+/* Gambar kamu — ganti url() dengan path foto asli */
+/* .rating-gambar-depan {
+  background-image: url('foto-kamu.jpg');
+  background-size: cover;
+  background-position: center;
+} */
+
+.rating-badge-floating {
+  background: #0f6e56;
+  color: #9fe1cb;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.rating-gambar-belakang {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 190px;
+  height: 260px;
+  border-radius: 16px;
+  border: 1px solid #2ee8b520;
+  background: #0a1520;
+  z-index: 1;
+}
+
+/* ---- RESPONSIF ---- */
+@media (max-width: 680px) {
+  .rating-section {
+    padding: 60px 20px;
+  }
+
+  .rating-kanan {
+    display: none; /* sembunyikan dekorasi di HP kecil */
+  }
+
+  .rating-judul {
+    font-size: 1.6rem;
+  }
+
+  .rating-kartu-grid {
+    flex-direction: column;
+  }
+}
+</style>
+
+<!-- =============================================
+     JS — taruh sebelum </body> atau di file .js
+     ============================================= -->
+<script>
+(function() {
+
+  /* ---- DATA TESTIMONIAL ---- */
+  /* Edit, tambah, atau hapus objek di sini */
+  var semuaTestimonial = [
+    {
+      inisial: "SN",
+      nama: "Sapphira Ney",
+      bintang: 5,
+      teks: "Kursus AI Fundamentals-nya luar biasa! Materi dikemas sangat jelas dan mudah dipahami bahkan untuk pemula.",
+      foto: "" /* isi path foto kalau ada, misal: "img/sapphira.jpg" */
+    },
+    {
+      inisial: "PA",
+      nama: "Putri Anaanda",
+      bintang: 5,
+      teks: "SQL for Data Analytics benar-benar mengubah cara saya bekerja dengan data. Sangat direkomendasikan!",
+      foto: ""
+    },
+    {
+      inisial: "RH",
+      nama: "Rizky Hendra",
+      bintang: 5,
+      teks: "Deep Learning with PyTorch dikemas praktis banget. Langsung bisa deploy model sendiri setelah selesai.",
+      foto: ""
+    },
+    {
+      inisial: "DM",
+      nama: "Dinda Maharani",
+      bintang: 4,
+      teks: "Cloud Engineering with AWS sangat komprehensif. Instrukturnya sabar dan responsif di forum diskusi.",
+      foto: ""
+    },
+    {
+      inisial: "FA",
+      nama: "Farhan Aziz",
+      bintang: 5,
+      teks: "Generative AI & LLMs adalah investasi terbaik tahun ini. Ilmunya langsung bisa dipakai di kerjaan.",
+      foto: ""
+    },
+    {
+      inisial: "NW",
+      nama: "Nurul Wahyuni",
+      bintang: 5,
+      teks: "Data Visualization course-nya keren! Tableau dan D3.js diajarkan step by step dengan proyek nyata.",
+      foto: ""
+    }
+  ];
+
+  /* Berapa kartu yang tampil bersamaan */
+  var TAMPIL_PER_HALAMAN = 2;
+  var halamanSekarang = 0;
+  var totalHalaman = Math.ceil(semuaTestimonial.length / TAMPIL_PER_HALAMAN);
+
+  /* ---- FUNGSI BUAT BINTANG ---- */
+  function buatBintang(jumlah) {
+    var hasil = "";
+    for (var i = 0; i < 5; i++) {
+      hasil += i < jumlah ? "★" : "☆";
+    }
+    return hasil;
+  }
+
+  /* ---- FUNGSI RENDER KARTU ---- */
+  function renderKartu() {
+    var grid = document.getElementById("rating-kartu-grid");
+    if (!grid) return;
+
+    grid.innerHTML = "";
+
+    var mulai = halamanSekarang * TAMPIL_PER_HALAMAN;
+    var selesai = Math.min(mulai + TAMPIL_PER_HALAMAN, semuaTestimonial.length);
+
+    for (var i = mulai; i < selesai; i++) {
+      var t = semuaTestimonial[i];
+
+      var isiAvatar = t.foto
+        ? '<img src="' + t.foto + '" alt="Foto ' + t.nama + '">'
+        : t.inisial;
+
+      var kartu = document.createElement("div");
+      kartu.className = "rating-kartu";
+      kartu.innerHTML =
+        '<div class="rating-kartu-atas">' +
+          '<div class="rating-avatar">' + isiAvatar + '</div>' +
+          '<div>' +
+            '<p class="rating-nama">' + t.nama + '</p>' +
+            '<div class="rating-bintang">' + buatBintang(t.bintang) + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p class="rating-teks">"' + t.teks + '"</p>' +
+        '<div class="rating-kutip">\u201D</div>';
+
+      grid.appendChild(kartu);
+    }
+  }
+
+  /* ---- EVENT TOMBOL ---- */
+  function pasangTombol() {
+    var btnPrev = document.getElementById("rating-prev");
+    var btnNext = document.getElementById("rating-next");
+
+    if (btnPrev) {
+      btnPrev.addEventListener("click", function() {
+        halamanSekarang = (halamanSekarang - 1 + totalHalaman) % totalHalaman;
+        renderKartu();
+      });
+    }
+
+    if (btnNext) {
+      btnNext.addEventListener("click", function() {
+        halamanSekarang = (halamanSekarang + 1) % totalHalaman;
+        renderKartu();
+      });
+    }
+  }
+
+  /* ---- INIT ---- */
+  renderKartu();
+  pasangTombol();
+
+})();
+</script>

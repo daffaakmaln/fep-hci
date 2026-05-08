@@ -74,7 +74,7 @@
     font-size: clamp(44px, 7.5vw, 96px);
     font-style: italic;
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1;
     letter-spacing: -0.03em;
     color: var(--pure-white);
     margin-bottom: 22px;
