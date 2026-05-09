@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
 
 :root {
-    --black:       #0D0907;
+    --black:       #0f0f0f;
     --black-2:     #111111;
     --black-3:     #1a1a1a;
     --black-4:     #242424;
@@ -62,7 +62,7 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(-);
+    color: var(--gray-light);
     margin-bottom: 14px;
 }
 
@@ -124,6 +124,12 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
     transition: var(--transition);
 }
 
+.wadahlogo{
+    width: 110px;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .navbar.scrolled {
     background: rgba(8, 8, 8, 0.88);
     backdrop-filter: blur(24px);
@@ -155,9 +161,12 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 }
 
 .nav-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
 }
 
 .nav-links a {
