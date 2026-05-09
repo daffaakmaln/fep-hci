@@ -125,7 +125,7 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 }
 
 .wadahlogo{
-    width: 110px;
+    width: 160px;
     display: flex;
     justify-content: flex-start;
 }
@@ -225,31 +225,83 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 
 /* ── Footer ── */
 footer {
-    padding: 36px 40px;
+    padding: 40px 100px 40px 100px;
     border-top: 1px solid var(--border);
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-footer p {
+.footer-brand {
+    max-width: 420px;
+}
+
+.footer-brand h3 {
+    
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.tagline {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.7;
+    color: var(--white-dim);
+    margin: 0 0 10px 0;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.footer-contact p:first-child {
+    margin: 10px 0px 0px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.footer-contact p,
+.copyright {
+    margin: 0;
+    max-width: 420px;
     font-size: 13px;
     color: var(--gray-mid);
 }
 
-.footer-links {
+.footer-right {
+    margin-top: 28px;
     display: flex;
-    gap: 24px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
 }
 
-.footer-links a {
-    font-size: 13px;
+.footer-links,
+.footer-socials {
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-links a,
+.footer-socials a {
+    margin: 0px 0px 0px 0px;
+    font-size: 16px;
     color: var(--gray-mid);
     transition: var(--transition);
 }
 
-.footer-links a:hover { color: var(--white); }
+.footer-links a:hover,
+.footer-socials a:hover {
+    color: var(--white);
+}
 
 /* ── Animations ── */
 .reveal {
@@ -334,9 +386,28 @@ footer p {
     .menu-button { display: flex; }
 
     footer {
+        display: flex;
         flex-direction: column;
         text-align: center;
         padding: 28px 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-right {
+        align-items: center;
+    }
+
+    .footer-links,
+    .footer-socials {
+        justify-content: center;
     }
 
 }
