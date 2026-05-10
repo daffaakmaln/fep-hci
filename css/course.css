@@ -8,10 +8,30 @@
 }
 
 .jobs-filter {
+    color: white;
     display: flex;
     gap: 8px;
     margin-bottom: 48px;
     flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    color: white;
+    background: transparent;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
 }
 
 .courses-header {

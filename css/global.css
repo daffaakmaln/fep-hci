@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
 
 :root {
-    --black:       #0f0f0f;
+    --gradasi: linear-gradient(180deg,rgb(16, 16, 16) 64%, rgb(49, 49, 49) 100%, rgb(43, 43, 43) 53%);
+    --black:       #0b0b0b;
     --black-2:     #111111;
-    --black-3:     #1a1a1a;
+    --black-3:     #3c3c3c;
     --black-4:     #242424;
-    --gray-dark:   #3a3a3a;
-    --gray-mid:    #666666;
+    --gray-dark:   #bfbfbf;
+    --gray-mid:    #a1a1a1;
     --gray-light:  #999999;
     --gray-pale:   #cccccc;
     --white-dim:   #e8e8e8;
-    --white:       #f5f5f5;
+    --white:       #d7dbe1;
     --pure-white:  #ffffff;
-    --border:      rgba(255,255,255,0.08);
+    --border:      rgba(255,255,255,0.3);
     --border-md:   rgba(255,255,255,0.14);      
 
     --font-display: 'Montserrat', sans-serif;
@@ -34,7 +35,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-body);
-    background-color: var(--black);
+    background: var(--black);
+    background: var(--gradasi);
     color: var(--white);
     font-size: 16px;
     line-height: 1.65;
@@ -225,16 +227,19 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 
 /* ── Footer ── */
 footer {
+    background-color: var(--black);
     padding: 40px 100px 40px 100px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
+    z-index: 1000;
     flex-wrap: wrap;
 }
 
 .footer-brand {
+    /* color: var(--white); */
     max-width: 420px;
 }
 

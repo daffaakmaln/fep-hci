@@ -1,0 +1,616 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/* ═══ PROMO / DISCOUNT SECTION ═══ */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.promo-section {
+    position: relative;
+    padding: 100px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    background: var(--black);
+}
+
+/* Ambient glow effects */
+.promo-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(120, 180, 255, 0.08) 0%, transparent 70%);
+    top: -200px;
+    left: -100px;
+    pointer-events: none;
+    animation: promoGlowMove 8s ease-in-out infinite alternate;
+}
+
+.promo-glow-2 {
+    background: radial-gradient(circle, rgba(255, 160, 120, 0.06) 0%, transparent 70%);
+    top: auto;
+    bottom: -200px;
+    left: auto;
+    right: -100px;
+    animation-delay: -4s;
+}
+
+@keyframes promoGlowMove {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 30px) scale(1.1); }
+}
+
+.promo-inner {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Left: Visual Column ── */
+.promo-visual {
+    flex: 0 0 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Floating badge */
+.promo-badge-float {
+    position: absolute;
+    top: -12px;
+    right: 40px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    animation: promoBadgeFloat 3s ease-in-out infinite;
+}
+
+.promo-badge-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e2e2e2, #c5c5c5);
+    animation: promoPulse 2s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(226, 226, 226, 0.35);
+}
+
+.promo-badge-text {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+@keyframes promoPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.9; }
+}
+
+@keyframes promoBadgeFloat {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* Image with rings */
+.promo-image-wrap {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin-bottom: 24px;
+}
+
+.promo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    position: relative;
+    z-index: 2;
+    filter: brightness(0.9) contrast(1.05);
+}
+
+.promo-image-ring {
+    position: absolute;
+    inset: -12px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    z-index: 1;
+    animation: promoRingRotate 20s linear infinite;
+}
+
+.promo-image-ring::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--pure-white);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.promo-image-ring-2 {
+    inset: -24px;
+    border-color: rgba(255, 255, 255, 0.04);
+    animation-direction: reverse;
+    animation-duration: 25s;
+}
+
+@keyframes promoRingRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Image overlay icon */
+.promo-image-overlay {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.promo-image-overlay i {
+    color: var(--pure-white);
+    font-size: 20px;
+}
+
+/* Students avatar stack */
+.promo-students {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.promo-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.promo-avatars img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    margin-left: -10px;
+    object-fit: cover;
+    transition: transform 0.3s var(--ease);
+}
+
+.promo-avatars img:first-child {
+    margin-left: 0;
+}
+
+.promo-avatars img:hover {
+    transform: translateY(-4px);
+    z-index: 5;
+}
+
+.promo-avatars-more {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--black-3);
+    border: 2px solid var(--black);
+    margin-left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.promo-students p {
+    font-size: 13px;
+    color: var(--gray-mid);
+    margin: 0;
+}
+
+/* ── Right: Content Column ── */
+.promo-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.promo-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ff8e53;
+    background: rgba(255, 142, 83, 0.1);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    width: fit-content;
+    border: 1px solid rgba(255, 142, 83, 0.2);
+}
+
+.promo-label i {
+    font-size: 14px;
+    animation: promoBolt 1.5s ease-in-out infinite;
+}
+
+@keyframes promoBolt {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+.promo-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--pure-white);
+    margin: 0;
+}
+
+.promo-desc {
+    font-size: 16px;
+    color: var(--gray-mid);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0;
+}
+
+/* Price Block */
+.promo-price-block {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.promo-price-current {
+    display: flex;
+    align-items: flex-start;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--pure-white);
+    line-height: 1;
+}
+
+.promo-currency {
+    font-size: 28px;
+    margin-top: 8px;
+    margin-right: 2px;
+}
+
+.promo-amount {
+    font-size: clamp(48px, 6vw, 72px);
+    letter-spacing: -0.04em;
+}
+
+.promo-price-original {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 12px;
+}
+
+.promo-strike {
+    font-size: 20px;
+    color: var(--gray-light);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255, 107, 107, 0.6);
+    text-decoration-thickness: 2px;
+}
+
+.promo-save {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    width: fit-content;
+    letter-spacing: 0.02em;
+}
+
+/* Countdown */
+.promo-countdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: var(--black-2);
+    border: 1px solid var(--border-md);
+    border-radius: 12px;
+    padding: 12px 16px;
+    min-width: 64px;
+}
+
+.countdown-num {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--pure-white);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    transition: transform 0.3s var(--ease), color 0.3s;
+}
+
+.countdown-num.ticking {
+    transform: scale(1.15);
+    color: #ff8e53;
+}
+
+.countdown-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--gray-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.countdown-sep {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gray-dark);
+    line-height: 1;
+    margin-top: -12px;
+}
+
+/* Progress Bar */
+.promo-progress {
+    margin-top: 8px;
+}
+
+.promo-progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--gray-mid);
+    margin-bottom: 8px;
+}
+
+.promo-progress-label i {
+    color: #ffffff;
+    margin-right: 4px;
+}
+
+.promo-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--black-3);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.promo-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #9b9b9b, #929292);
+    border-radius: 3px;
+    transition: width 1s var(--ease);
+    position: relative;
+}
+
+.promo-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(90deg, transparent, rgba(237, 237, 237, 0.3));
+    animation: promoShimmer 2s ease-in-out infinite;
+}
+
+@keyframes promoShimmer {
+    0% { transform: translateX(-20px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(20px); opacity: 0; }
+}
+
+/* CTA Buttons */
+.promo-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.promo-btn-primary {
+    background: linear-gradient(135deg, #161616, #b3b3b3);
+    color: var(--pure-white);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border: none;
+    box-shadow: 0 8px 32px rgba(250, 250, 250, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.promo-btn-primary:hover::before {
+    left: 100%;
+}
+
+.promo-btn-primary:hover {
+    transform: scale(1.03);
+    color: var(--black);
+    box-shadow: 0 12px 40px rgba(224, 224, 224, 0.4);
+}
+
+.promo-btn-secondary {
+    padding: 16px 28px;
+    font-size: 15px;
+}
+
+/* Trust Badges */
+.promo-trust {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-md);
+}
+
+.promo-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray-mid);
+}
+
+.promo-trust-item i {
+    font-size: 14px;
+    color: var(--gray-dark);
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 900px) {
+    .promo-inner {
+        flex-direction: column;
+        gap: 48px;
+        text-align: center;
+    }
+
+    .promo-visual {
+        flex: none;
+        width: 100%;
+    }
+
+    .promo-image-wrap {
+        width: 260px;
+        height: 260px;
+    }
+
+    .promo-content {
+        align-items: center;
+    }
+
+    .promo-desc {
+        text-align: center;
+    }
+
+    .promo-price-block {
+        justify-content: center;
+    }
+
+    .promo-actions {
+        justify-content: center;
+    }
+
+    .promo-trust {
+        justify-content: center;
+    }
+
+    .promo-badge-float {
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .promo-section {
+        padding: 64px 0;
+    }
+
+    .promo-inner {
+        gap: 36px;
+    }
+
+    .promo-image-wrap {
+        width: 220px;
+        height: 220px;
+    }
+
+    .promo-image-ring {
+        inset: -8px;
+    }
+
+    .promo-image-ring-2 {
+        inset: -16px;
+    }
+
+    .countdown-item {
+        padding: 10px 12px;
+        min-width: 52px;
+    }
+
+    .countdown-num {
+        font-size: 20px;
+    }
+
+    .countdown-label {
+        font-size: 9px;
+    }
+
+    .promo-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .promo-btn-primary,
+    .promo-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .promo-trust {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .promo-badge-float {
+        width: 70px;
+        height: 70px;
+        right: 10%;
+    }
+
+    .promo-badge-text {
+        font-size: 9px;
+    }
+}

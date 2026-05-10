@@ -28,7 +28,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .register-card .subtitle {
     font-size: 14px;
-    color: white
+    color: white;
     margin-bottom: 36px;
 }
 

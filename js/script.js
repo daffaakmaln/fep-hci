@@ -319,3 +319,229 @@ function slideIndicator(toIndex) {
     }
 
 });
+
+(function() {
+    'use strict';
+
+    // ── Countdown Timer ──
+    const countdown = {
+        days: document.getElementById('cdDays'),
+        hours: document.getElementById('cdHours'),
+        minutes: document.getElementById('cdMinutes'),
+        seconds: document.getElementById('cdSeconds')
+    };
+
+    // Set deadline: 2 days, 14 hours, 35 minutes, 48 seconds from now
+    const now = new Date();
+    const deadline = new Date(now.getTime() + (2 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (35 * 60 * 1000) + (48 * 1000));
+
+    function updateCountdown() {
+        const current = new Date();
+        const diff = deadline - current;
+
+        if (diff <= 0) {
+            // Timer expired - show expired state
+            Object.values(countdown).forEach(el => {
+                if (el) {
+                    el.textContent = '00';
+                    el.style.color = '#ff6b6b';
+                }
+            });
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const values = {
+            days: String(days).padStart(2, '0'),
+            hours: String(hours).padStart(2, '0'),
+            minutes: String(minutes).padStart(2, '0'),
+            seconds: String(seconds).padStart(2, '0')
+        };
+
+        // Update with tick animation
+        Object.keys(countdown).forEach(key => {
+            const el = countdown[key];
+            if (!el) return;
+
+            if (el.textContent !== values[key]) {
+                el.classList.add('ticking');
+                el.textContent = values[key];
+                setTimeout(() => el.classList.remove('ticking'), 300);
+            }
+        });
+    }
+
+    // Initialize and start countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── Price Counter Animation ──
+    const priceEl = document.getElementById('promoAmount');
+    if (priceEl) {
+        const targetPrice = 49;
+        let currentPrice = 199;
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function animatePrice(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Ease out cubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const value = Math.round(currentPrice - (currentPrice - targetPrice) * ease);
+
+            priceEl.textContent = value;
+
+            if (progress < 1) {
+                requestAnimationFrame(animatePrice);
+            }
+        }
+
+        // Start animation when section is visible
+        const priceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(animatePrice);
+                    priceObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        priceObserver.observe(document.getElementById('promoSection'));
+    }
+
+    // ── Progress Bar Animation ──
+    const progressFill = document.querySelector('.promo-progress-fill');
+    if (progressFill) {
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targetWidth = progressFill.style.width;
+                    progressFill.style.width = '0%';
+                    setTimeout(() => {
+                        progressFill.style.width = targetWidth;
+                    }, 300);
+                    progressObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        progressObserver.observe(progressFill);
+    }
+
+    // ── Random seat decrement simulation ──
+    const seatLabel = document.querySelector('.promo-progress-label span:last-child');
+    if (seatLabel) {
+        let seats = 12;
+        const seatInterval = setInterval(() => {
+            if (seats > 3 && Math.random() > 0.7) {
+                seats--;
+                seatLabel.textContent = `Only ${seats} left`;
+                seatLabel.style.color = '#ff6b6b';
+                setTimeout(() => {
+                    seatLabel.style.color = '';
+                }, 500);
+            }
+            if (seats <= 3) {
+                clearInterval(seatInterval);
+            }
+        }, 8000); // Check every 8 seconds
+    }
+
+    // ── Parallax effect on glow ──
+    const promoSection = document.getElementById('promoSection');
+    if (promoSection) {
+        const glows = promoSection.querySelectorAll('.promo-glow');
+
+        promoSection.addEventListener('mousemove', (e) => {
+            const rect = promoSection.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            glows.forEach((glow, index) => {
+                const factor = index === 0 ? 1 : -1;
+                const moveX = x * 40 * factor;
+                const moveY = y * 40 * factor;
+                glow.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+
+        promoSection.addEventListener('mouseleave', () => {
+            glows.forEach(glow => {
+                glow.style.transform = '';
+            });
+        });
+    }
+
+    console.log('Promo section initialized');
+})();
+
+
+// ── Stats Number Animation with Randomization ──
+document.addEventListener("DOMContentLoaded", () => {
+    const statsSection = document.querySelector(".stats-section");
+    
+    if (!statsSection) return;
+
+    const statsNumbers = statsSection.querySelectorAll(".stats-number");
+    let hasAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                runStatsAnimation();
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    observer.observe(statsSection);
+
+    function runStatsAnimation() {
+        statsNumbers.forEach((el) => {
+            const finalText = el.textContent.trim();
+            const finalNumber = parseInt(finalText.replace(/\D/g, ""));
+            
+            const suffix = finalText.includes("%")
+                ? "%"
+                : finalText.includes("+")
+                ? "+"
+                : "";
+
+            let current = 0;
+            let duration = 1800;
+            let intervalTime = 40;
+            let totalSteps = duration / intervalTime;
+            let step = 0;
+
+            const randomize = setInterval(() => {
+                step++;
+                const progress = step / totalSteps;
+                const randomValue = Math.floor(
+                    Math.random() * finalNumber * (1 - progress)
+                );
+                current = Math.floor(progress * finalNumber);
+
+                const displayValue = progress < 0.85
+                    ? current + randomValue
+                    : current;
+
+                el.textContent = displayValue + suffix;
+
+                if (step >= totalSteps) {
+                    clearInterval(randomize);
+                    el.textContent = finalText;
+                }
+            }, intervalTime);
+        });
+    }
+});
