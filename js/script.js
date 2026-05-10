@@ -482,7 +482,7 @@ function slideIndicator(toIndex) {
 })();
 
 
-// ── Stats Number Animation with Randomization ──
+// Stats Number Animation
 document.addEventListener("DOMContentLoaded", () => {
     const statsSection = document.querySelector(".stats-section");
     
@@ -546,6 +546,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+//typing effect
 const words = ['learning', 'education', 'knowledge', 'growth', 'discovery', 'innovation'];
 const typingElement = document.getElementById('typing');
 let wordIndex = 0;
