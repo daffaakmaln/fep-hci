@@ -123,8 +123,6 @@
 /* ── Trail / Ticker ── */
 .trail-section {
     padding: 28px 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
     overflow: hidden;
 }
 
@@ -138,23 +136,18 @@
 .trail-track:hover { animation-play-state: paused; }
 
 .trail-item {
-    font-size: 11px;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--gray-dark);
     white-space: nowrap;
-    padding: 0 32px;
+    padding: 0 80px;
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 26px;
 }
 
-.trail-item::after {
-    content: '✦';
-    font-size: 7px;
-    color: var(--gray-dark);
-}
 
 @keyframes trail {
     from { transform: translateX(0); }
