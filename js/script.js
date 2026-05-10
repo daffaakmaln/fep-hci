@@ -545,3 +545,51 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+const words = ['learning', 'education', 'knowledge', 'growth', 'discovery', 'innovation'];
+const typingElement = document.getElementById('typing');
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let isPaused = false;
+
+const TYPE_SPEED = 120;
+const DELETE_SPEED = 60;
+const PAUSE_DURATION = 2000;
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+
+    if (isPaused) return;
+
+    if (!isDeleting) {
+        // Typing phase
+        if (charIndex < currentWord.length) {
+            typingElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+            setTimeout(typeEffect, TYPE_SPEED);
+        } else {
+            // Word complete, pause then delete
+            isPaused = true;
+            setTimeout(() => {
+                isPaused = false;
+                isDeleting = true;
+                typeEffect();
+            }, PAUSE_DURATION);
+        }
+    } else {
+        // Deleting phase
+        if (charIndex > 0) {
+            typingElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(typeEffect, DELETE_SPEED);
+        } else {
+            // Move to next word
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(typeEffect, TYPE_SPEED);
+        }
+    }
+}
+
+typeEffect();
