@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
 
 :root {
-    --gradasi: linear-gradient(180deg,rgb(16, 16, 16) 64%, rgb(49, 49, 49) 100%, rgb(43, 43, 43) 53%);
-    --black:       #0b0b0b;
-    --black-2:     #111111;
-    --black-3:     #3c3c3c;
-    --black-4:     #242424;
-    --gray-dark:   #bfbfbf;
-    --gray-mid:    #a1a1a1;
-    --gray-light:  #999999;
-    --gray-pale:   #cccccc;
-    --white-dim:   #e8e8e8;
-    --white:       #d7dbe1;
-    --pure-white:  #ffffff;
-    --border:      rgba(255,255,255,0.3);
-    --border-md:   rgba(255,255,255,0.14);      
+    --gradasi: linear-gradient(180deg, rgb(16, 16, 16) 64%, rgb(49, 49, 49) 100%, rgb(43, 43, 43) 53%);
+    --black: #0b0b0b;
+    --black-2: #111111;
+    --black-3: #3c3c3c;
+    --black-4: #242424;
+    --gray-dark: #bfbfbf;
+    --gray-mid: #a1a1a1;
+    --gray-light: #999999;
+    --gray-pale: #cccccc;
+    --white-dim: #e8e8e8;
+    --white: #d7dbe1;
+    --pure-white: #ffffff;
+    --border: rgba(255, 255, 255, 0.3);
+    --border-md: rgba(255, 255, 255, 0.14);
 
     --font-display: 'Montserrat', sans-serif;
-    --font-body:    'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
     --nav-h: 68px;
     --radius: 14px;
@@ -28,7 +28,9 @@
     --max-w: 1160px;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -46,10 +48,26 @@ body {
 
 
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-ul { list-style: none; }
-button { font-family: var(--font-body); cursor: pointer; border: none; background: none; }
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: var(--font-body);
+    cursor: pointer;
+    border: none;
+    background: none;
+}
 
 .container {
     max-width: var(--max-w);
@@ -57,7 +75,9 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
     padding: 0 40px;
 }
 
-.section { padding: 110px 0; }
+.section {
+    padding: 110px 0;
+}
 
 .section-label {
     font-size: 11px;
@@ -106,13 +126,13 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 .btn-outline:hover {
     background: var(--white);
     color: var(--black);
-    border-color: rgba(255,255,255,0.28);
+    border-color: rgba(255, 255, 255, 0.28);
 }
 
 .btn-dark {
     background: var(--black);
     color: var(--pure-white);
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .btn-dark:hover {
@@ -123,7 +143,9 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 /* ── Navbar ── */
 .navbar {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 900;
     height: var(--nav-h);
     display: flex;
@@ -133,7 +155,7 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
     transition: var(--transition);
 }
 
-.wadahlogo{
+.wadahlogo {
     width: 160px;
     display: flex;
     justify-content: flex-start;
@@ -163,7 +185,7 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
     gap: 8px;
 }
 
-.logowrap img{
+.logowrap img {
     width: 32px;
     height: 20px;
     border-radius: 6px;
@@ -190,18 +212,18 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--white);
-    background: rgba(255,255,255,0.07);
+    background: rgba(255, 255, 255, 0.07);
 }
 
 .btn-register {
     font-size: 14px;
     font-weight: 500;
     color: var(--white);
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     border-color: var(--white);
     border-style: solid;
-    border-width: 0.5px ;
-    
+    border-width: 0.5px;
+
     padding: 9px 22px;
     border-radius: var(--radius-pill);
     transition: var(--transition);
@@ -213,8 +235,13 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
     transform: scale(1.03);
 }
 
-.nav-register-mobile { display: none; }
-.nav-register-desktop { display: block; }
+.nav-register-mobile {
+    display: none;
+}
+
+.nav-register-desktop {
+    display: block;
+}
 
 .menu-button {
     display: none;
@@ -251,7 +278,7 @@ footer {
 }
 
 .footer-brand h3 {
-    
+
     font-size: 30px;
     margin-bottom: 10px;
     color: var(--white);
@@ -328,8 +355,15 @@ footer {
 }
 
 @keyframes pageEnter {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .page-hero {
@@ -354,11 +388,61 @@ footer {
     line-height: 1.7;
 }
 
+.page-hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    gap: 64px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 6vw, 80px);
+    font-style: italic;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--gray-light);
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+.hero-video {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: #111;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* ── Responsive ── */
 @media screen and (max-width: 700px) {
-    .navbar { padding: 0 20px; }
+    .navbar {
+        padding: 0 20px;
+    }
 
-    .nav-register-desktop { display: none; }
+    .nav-register-desktop {
+        display: none;
+    }
 
     .nav-register-mobile {
         display: block;
@@ -378,8 +462,9 @@ footer {
     .nav-links {
         position: fixed;
         top: var(--nav-h);
-        left: 0; right: 0;
-        background: rgba(8,8,8,0.97);
+        left: 0;
+        right: 0;
+        background: rgba(8, 8, 8, 0.97);
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
@@ -395,7 +480,9 @@ footer {
         font-style: italic;
     }
 
-    .menu-button { display: flex; }
+    .menu-button {
+        display: flex;
+    }
 
     footer {
         display: flex;
@@ -421,5 +508,15 @@ footer {
     .footer-socials {
         justify-content: center;
     }
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-video {
+        height: 320px;
+    }
+
 
 }
