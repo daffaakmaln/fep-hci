@@ -116,18 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // accordionfaq
-    // document.querySelectorAll('.faq-question').forEach(function (btn) {
-    //     btn.addEventListener('click', function () {
-    //         var item = btn.closest('.faq-item');
-    //         var isOpen = item.classList.contains('open');
-    //         document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
-    //             openItem.classList.remove('open');
-    //         });
-    //         if (!isOpen) item.classList.add('open');
-    //     });
-    // });
-
     //slider
 let onSlide = false;
 

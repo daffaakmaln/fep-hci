@@ -92,13 +92,19 @@ button { font-family: var(--font-body); cursor: pointer; border: none; backgroun
 }
 
 .btn-outline {
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
     background: transparent;
     color: var(--white);
-    border: 1px solid var(--border-md);
+    border: 2px solid var(--white-dim);
 }
 
 .btn-outline:hover {
-    background: rgba(255,255,255,0.06);
+    background: var(--white);
+    color: var(--black);
     border-color: rgba(255,255,255,0.28);
 }
 

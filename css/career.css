@@ -243,7 +243,6 @@
 
 .job-title {
     font-family: var(--font-display);
-    font-style: italic;
     font-size: 30px;
     letter-spacing: -0.01em;
     margin-bottom: 6px;
@@ -267,17 +266,6 @@
     flex-shrink: 0;
 }
 
-.job-badge {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: var(--radius-pill);
-    border: 1px solid var(--border-md);
-    color: var(--gray-light);
-}
-
 .imagepekerjaan {
     
     width: 300px;
@@ -285,8 +273,6 @@
     border-radius: 8px;
     object-fit: cover;
 }
-
-.job-badge.open { color: var(--white); border-color: rgba(255,255,255,0.22); }
 
 .job-arrow {
     font-size: 18px;
@@ -519,11 +505,6 @@
     .job-right {
         width: 100%;
         justify-content: space-between;
-    }
-
-    .job-badge {
-        padding: 6px 12px;
-        font-size: 10px;
     }
 
     .statssection {
