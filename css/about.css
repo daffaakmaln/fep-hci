@@ -485,15 +485,15 @@
 }
 
 .team-card:nth-child(1) {
-    background-color: #4ECDC4;
+    background-color: var(--black-3);
 }
 
 .team-card:nth-child(2) {
-    background-color: #FFD93D;
+    background-color: var(--black-3);
 }
 
 .team-card:nth-child(3) {
-    background-color: #C9B1FF;
+    background-color: var(--black-3);
 }
 
 .team-card img {
