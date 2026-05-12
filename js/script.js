@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Stats Number Animation
+// number animation
 document.addEventListener("DOMContentLoaded", () => {
     const statsSection = document.querySelector(".stats-section");
 
